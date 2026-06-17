@@ -24,9 +24,16 @@ public class TelaListaProdutos extends javax.swing.JFrame {
 
     public TelaListaProdutos(Usuario usuario) {
         initComponents();
+
         conexao = new Conexao();
         conn = conexao.Conectar();
+
         this.usuariologado = usuario;
+
+        if (!usuariologado.getCargo().equals("ADMINISTRADOR")) {
+            btnExcluir.setEnabled(false);
+        }
+
         ProdutoDAO dao = new ProdutoDAO();
         carregarTabela(dao.buscarProdutosComFornecedor(""));
     }
@@ -77,7 +84,6 @@ public class TelaListaProdutos extends javax.swing.JFrame {
         });
 
         lblTexto.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblTexto.setForeground(new java.awt.Color(0, 0, 0));
         lblTexto.setText("Lista de Produtos");
 
         jTable1.setBackground(new java.awt.Color(204, 204, 255));
@@ -96,7 +102,6 @@ public class TelaListaProdutos extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Buscar");
 
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +124,7 @@ public class TelaListaProdutos extends javax.swing.JFrame {
         btnExcluir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnExcluir.setText("EXCLUIR");
-        btnExcluir.setEnabled(false);
+        btnExcluir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcluirActionPerformed(evt);
@@ -130,7 +135,6 @@ public class TelaListaProdutos extends javax.swing.JFrame {
         btnAtualizar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAtualizar.setForeground(new java.awt.Color(255, 255, 255));
         btnAtualizar.setText("ATUALIZAR");
-        btnAtualizar.setEnabled(false);
         btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtualizarActionPerformed(evt);
@@ -187,6 +191,8 @@ public class TelaListaProdutos extends javax.swing.JFrame {
                     .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
+
+        btnExcluir.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
