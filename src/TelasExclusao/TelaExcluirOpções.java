@@ -110,7 +110,8 @@ public class TelaExcluirOpções extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExcluirFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirFornecedorActionPerformed
-        // TODO add your handling code here:
+        new TelaExcluirFornecedor(usuariologado).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnExcluirFornecedorActionPerformed
 
     private void btnExcluirProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirProdutoActionPerformed
