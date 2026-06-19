@@ -169,20 +169,22 @@ public class MovimentacaoEstoqueDAO {
     }
 
     public List<Object[]> listarProdutosComFornecedor(String filtroFornecedor) {
+
         List<Object[]> lista = new ArrayList<>();
 
-        String sql = "SELECT p.nome AS nome_produto, "
-                + "p.quantidade AS quantidade, "
-                + "f.nome AS nome_fornecedor "
+        String sql = "SELECT "
+                + "p.nome AS nome_produto, "
+                + "p.quantidade, "
+                + "GROUP_CONCAT(f.nome SEPARATOR ', ') AS nome_fornecedor "
                 + "FROM produto p "
                 + "LEFT JOIN fornecedor_produto fp ON p.id = fp.id_produto "
                 + "LEFT JOIN fornecedor f ON fp.id_fornecedor = f.id ";
 
-        // Filtro opcional
         if (filtroFornecedor != null && !filtroFornecedor.trim().isEmpty()) {
             sql += "WHERE f.nome LIKE ? ";
         }
 
+        sql += "GROUP BY p.id, p.nome, p.quantidade ";
         sql += "ORDER BY p.nome ASC";
 
         try {
@@ -212,5 +214,4 @@ public class MovimentacaoEstoqueDAO {
 
         return lista;
     }
-
 }

@@ -4,8 +4,7 @@
  */
 package VIEW;
 
-import Modelo.ListaProduto;
-import Modelo.Produto;
+import classes.ListaProduto;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
