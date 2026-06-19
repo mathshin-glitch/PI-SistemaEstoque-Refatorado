@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: controle_estoque
+-- Host: localhost    Database: controle_estoque
 -- ------------------------------------------------------
--- Server version	8.0.40
+-- Server version	8.0.44
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `fornecedor_produto` (
   KEY `id_produto` (`id_produto`),
   CONSTRAINT `fornecedor_produto_ibfk_1` FOREIGN KEY (`id_fornecedor`) REFERENCES `fornecedor` (`id`),
   CONSTRAINT `fornecedor_produto_ibfk_2` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `fornecedor_produto` (
 
 LOCK TABLES `fornecedor_produto` WRITE;
 /*!40000 ALTER TABLE `fornecedor_produto` DISABLE KEYS */;
-INSERT INTO `fornecedor_produto` VALUES (8,16,50);
+INSERT INTO `fornecedor_produto` VALUES (1,1,18),(2,2,19),(3,3,21),(4,4,22),(5,5,24),(6,8,25),(7,10,26),(8,12,27),(9,13,28),(10,14,29),(11,16,30),(12,17,31),(13,18,32),(14,19,33),(15,20,34),(16,21,35),(17,22,36),(18,23,37),(19,24,38),(20,1,39),(21,2,40),(22,3,41),(23,4,42),(24,5,43),(25,8,44),(26,10,45),(27,12,46),(28,13,47),(29,14,48),(30,16,49),(31,18,50),(32,19,51),(33,20,52),(34,21,53),(35,22,54),(36,23,55),(37,24,56),(38,1,57),(39,2,59),(40,3,60),(41,4,61),(42,5,62),(43,8,63),(44,10,64),(45,12,65),(46,13,66),(47,14,67),(48,16,68),(49,17,69),(50,18,71),(51,19,72),(52,20,73),(53,21,74);
 /*!40000 ALTER TABLE `fornecedor_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-07 18:05:33
+-- Dump completed on 2026-06-19 17:00:09

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: controle_estoque
+-- Host: localhost    Database: controle_estoque
 -- ------------------------------------------------------
--- Server version	8.0.40
+-- Server version	8.0.44
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `movimentacao_estoque` (
   PRIMARY KEY (`id`),
   KEY `id_produto` (`id_produto`),
   CONSTRAINT `movimentacao_estoque_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `movimentacao_estoque` (
 
 LOCK TABLES `movimentacao_estoque` WRITE;
 /*!40000 ALTER TABLE `movimentacao_estoque` DISABLE KEYS */;
-INSERT INTO `movimentacao_estoque` VALUES (10,50,'SAIDA',33,'2025-12-07 18:01:39');
+INSERT INTO `movimentacao_estoque` VALUES (10,50,'SAIDA',33,'2025-12-07 18:01:39'),(11,36,'SAIDA',20,'2026-06-19 14:00:37'),(12,22,'ENTRADA',20,'2026-06-19 16:46:02');
 /*!40000 ALTER TABLE `movimentacao_estoque` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-07 18:05:32
+-- Dump completed on 2026-06-19 17:00:08
